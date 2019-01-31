@@ -1,0 +1,29 @@
+﻿@model VCNNetworkEquipment.Models.Product
+@{
+    Layout = "_Layout";
+}
+<link rel="stylesheet" href="/css/form.css">
+<div class="form" data-aos="fade-up">
+    <div class="head">
+        <h1>ADD ITEM</h1>
+        <h3>Please fill out the form below</h3>
+    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <form asp-action="AddComment" method="post">
+        <input type="hidden" asp-for="ProductID" />
+        <input type="hidden" asp-for="Name" />
+        <input type="hidden" asp-for="Description" />
+        <input type="hidden" asp-for="FreeShip" />
+        <input type="hidden" asp-for="Category" />
+        <input type="hidden" asp-for="Price" />
+        <input type="hidden" asp-for="Year" />
+        <label asp-for="Comment">CM: <span>*</span> </label>
+        <input class="form-control" asp-for="Comment" />
+        <div class="submit">
+            <button type="submit">Save</button>
+            <button asp-action="List">Cancel</button>
+
+        </div>
+    </form>
+</div>
